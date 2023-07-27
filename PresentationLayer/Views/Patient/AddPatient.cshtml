@@ -1,0 +1,31 @@
+﻿@model ViewModel.PatientViewModel;
+   @{ ViewData["Title"] = "AddPatient";
+}
+<form method="post">
+    <div>
+        <div>
+            @Html.LabelFor(x=> x.Name)
+            @Html.TextBoxFor(x=> x.Name)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.Age)
+            @Html.TextBoxFor(x=> x.Age)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.Gender)
+            @Html.TextBoxFor(x=> x.Gender)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.PhoneNumber)
+            @Html.TextBoxFor(x=> x.PhoneNumber)
+        </div>
+        <br />
+        <div>
+            <input  type="submit" value="SUBMIT"/>
+        </div>
+    </div>
+</form>
+        

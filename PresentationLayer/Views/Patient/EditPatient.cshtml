@@ -1,0 +1,32 @@
+﻿@model ViewModel.PatientViewModel;
+@{
+    ViewData["Title"] = "EditPatient";
+}
+<form method="post" action="/Patient/UpdatePatient">
+    <div>
+        @Html.TextBoxFor(x=> x.PatientId,new {@readOnly="readonly",@hidden="true"});
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.Name)
+        @Html.TextBoxFor(x=>x.Name)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x=>x.Age)
+        @Html.TextBoxFor(x=>x.Age)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x=>x.Gender)
+        @Html.TextBoxFor(x=>x.Gender)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x=>x.PhoneNumber)
+        @Html.TextBoxFor(x=>x.PhoneNumber)
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="updatePatient"/>
+    </div>
+</form>

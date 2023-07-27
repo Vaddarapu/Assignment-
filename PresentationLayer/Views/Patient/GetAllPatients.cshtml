@@ -1,0 +1,37 @@
+﻿@model List<ViewModel.PatientViewModel>
+@{
+    ViewData["Tittle"] = "GetAllPatients";
+}
+
+<div>
+    @Html.ActionLink("Add Patient","AddPatient")
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>PhoneNumber</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var patientViewModel in Model)
+        {
+            <tr>
+                <th scope="row">@patientViewModel.Name</th>
+                <td>@patientViewModel.Age</td>
+                <td>@patientViewModel.Gender</td>
+                <td>@patientViewModel.PhoneNumber</td>
+                <td>
+                    @Html.ActionLink("Edit","EditPatient",new{id=@patientViewModel.PatientId}) |@Html.ActionLink("Delete","DeletePatient",new{id=@patientViewModel.PatientId})
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

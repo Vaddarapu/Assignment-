@@ -1,0 +1,49 @@
+﻿@model ViewModel.BillViewModel;
+@{
+    ViewData["Title"] = "createPatient";
+}
+<form method="post">
+    <div>
+      @*  <div>
+            @Html.LabelFor(x=> x.BillId)
+            @Html.TextBoxFor(x=> x.BillId)
+        </div>*@
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.BillDate)
+@*            @Html.TextBoxFor(x=>x.BillDate, new {})
+*@            @Html.TextBoxFor(x => x.BillDate, new { @class = "dateInput", @placeholder = "plz input date", @type = "datetime-local" })
+
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.ItemName)
+            @Html.TextBoxFor(x=> x.ItemName)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.TotalAmount)
+            @Html.TextBoxFor(x=> x.TotalAmount)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.AmountPaid)
+            @Html.TextBoxFor(x=> x.AmountPaid)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.Balance)
+            @Html.TextBoxFor(x=> x.Balance)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(x=> x.PatientId)
+            @Html.TextBoxFor(x=> x.PatientId)
+        </div>
+
+
+        <div>
+            <input type="submit" value="SUBMIT" />
+        </div>
+    </div>
+</form>

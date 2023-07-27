@@ -1,0 +1,44 @@
+﻿@model List<ViewModel.BillViewModel>
+@{
+    ViewData["Tittle"] = "GetAllList";
+}
+
+<div>
+    @Html.ActionLink("Add Bill","CreateBill")
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>BillId</th>
+            <th>BillDate</th>
+            <th>ItemName</th>
+            <th>TotalAmount</th>
+            <th>AmountPaid</th>
+            <th>Balance</th>
+            <th>PatientId</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var billViewModel in Model)
+        {
+            <tr>
+                <th scope="row">@billViewModel.BillId</th>
+                <td>@billViewModel.BillDate</td>
+                <td>@billViewModel.ItemName</td>
+                <td>@billViewModel.TotalAmount</td>
+                <td>@billViewModel.AmountPaid</td>
+                <td>@billViewModel.Balance</td>
+                <td>@billViewModel.PatientId</td>
+              
+                <td>
+                    @Html.ActionLink("Edit","EditBill",new{id=@billViewModel.BillId})
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

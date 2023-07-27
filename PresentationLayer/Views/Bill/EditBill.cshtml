@@ -1,0 +1,46 @@
+﻿@model ViewModel.BillViewModel;
+@{
+    ViewData["Title"] = "EditBill";
+}
+<form method="post" action="/Bill/UpdateBill">
+    <div>
+        @Html.TextBoxFor(x=> x.BillId,new {@readOnly="readonly",@hidden="true"})
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.PatientId)
+        @Html.TextBoxFor(x=>x.PatientId)
+    </div>
+    <br />
+   <div>
+        @Html.HiddenFor(x=>x.BillId)
+    </div>
+   <div>
+        @Html.LabelFor(x=>x.BillDate)
+        @Html.TextBoxFor(x=>x.BillDate)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x=>x.ItemName)
+        @Html.TextBoxFor(x=>x.ItemName)
+    </div>
+    <br />
+      <div>
+        @Html.LabelFor(x=>x.TotalAmount)
+        @Html.TextBoxFor(x=>x.TotalAmount)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x=>x.AmountPaid)
+        @Html.TextBoxFor(x=>x.AmountPaid)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x=>x.Balance)
+        @Html.TextBoxFor(x=>x.Balance)
+    </div>
+    <br />
+   
+    <div>
+        <input type="submit" value="updateBill" />
+    </div>
+</form>
